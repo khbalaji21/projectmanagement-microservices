@@ -24,7 +24,7 @@ namespace Employees.API.Entities
 
         [BsonElement("Skills")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "The Employee skills cannot be empty")]
-        public string[] Skills { get; set; }
+        public string[]? Skills { get; set; }
 
         [BsonElement("Description")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "The Employee Description cannot be empty")]
