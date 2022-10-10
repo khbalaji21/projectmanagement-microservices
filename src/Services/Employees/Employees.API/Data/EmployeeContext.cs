@@ -8,10 +8,10 @@ namespace Employees.API.Data
     {
         public EmployeeContext(IConfiguration configuration)
         {
-            var client = new MongoClient(configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
-            var database = client.GetDatabase(configuration.GetValue<string>("DatabaseSettings:DatabaseName"));
+            var client = new MongoClient(configuration.GetValue<string>("ProjectManagementDatabaseSettings:ConnectionString"));
+            var database = client.GetDatabase(configuration.GetValue<string>("ProjectManagementDatabaseSettings:DatabaseName"));
 
-            Employees = database.GetCollection<Employee>(configuration.GetValue<string>("DatabaseSettings:CollectionName"));
+            Employees = database.GetCollection<Employee>(configuration.GetValue<string>("ProjectManagementDatabaseSettings:EmployeesCollectionName"));
             EmployeeContextSeed.SeedData(Employees);
         }
 

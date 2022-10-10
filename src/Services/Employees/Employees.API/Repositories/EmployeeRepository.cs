@@ -1,10 +1,11 @@
 ﻿using Employees.API.Data.Interfaces;
 using Employees.API.Entities;
+using Employees.API.Repositories.Interfaces;
 using MongoDB.Driver;
 
 namespace Employees.API.Repositories
 {
-    public class EmployeeRepository
+    public class EmployeeRepository : IEmployeeRepository
     {
         private readonly IEmployeeContext _context;
 

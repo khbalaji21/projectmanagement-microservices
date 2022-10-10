@@ -1,4 +1,13 @@
+using Employees.API.Data;
+using Employees.API.Data.Interfaces;
+using Employees.API.Repositories;
+using Employees.API.Repositories.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<IEmployeeContext, EmployeeContext>();
+
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
 // Add services to the container.
 
